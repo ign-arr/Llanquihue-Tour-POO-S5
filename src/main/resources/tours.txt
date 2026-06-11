@@ -1,0 +1,5 @@
+Ruta Costanera del Lago;Llanquihue;8000
+Recorrido Historico de Llanquihue;Llanquihue;12000
+Paseo Lago Llanquihue;Llanquihue;15000
+Visita Iglesia San Jose;Llanquihue;10000
+Tour Gastronomico Llanquihue;Llanquihue;18000
