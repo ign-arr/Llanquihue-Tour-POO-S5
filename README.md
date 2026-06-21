@@ -1,8 +1,10 @@
-## Llanquihue Tour
+# Llanquihue Tour
 
-Aplicación desarrollada en Java para gestionar información de tours de la comuna de Llanquihue. El programa lee datos desde un archivo de texto, crea objetos de tipo Tour, los almacena en un ArrayList y permite mostrar y filtrar la información según una condición determinada.
+## Descripción del proyecto
 
-## Estructura de carpetas
+Llanquihue Tour es una aplicación desarrollada en Java que permite gestionar información de tours turísticos de la comuna de Llanquihue. El sistema lee datos desde un archivo de texto, crea objetos de tipo Tour y los almacena en una colección ArrayList para posteriormente mostrarlos y realizar búsquedas simples.
+
+## Estructura del proyecto
 
 ```text
 LlanquihueTourApp
@@ -18,17 +20,47 @@ LlanquihueTourApp
         │   ├── data
         │   │   └── GestorDatos.java
         │   │
-        │   └── ui
+        │   ├── service
+        │   │   └── TourService.java
+        │   │
+        │   └── app
         │       └── Main.java
         │
         └── resources
             └── tours.txt
 ```
 
-## Compilación y ejecución
+## Descripción de las clases
 
-Abrir el proyecto en IntelliJ IDEA. Esperar a que Intellij cargue el proyecto. Abrir la clase Main.java. Ejecutar el método main(). Verificar la salida en la consola del programa.
+### Tour.java
+
+Representa la entidad Tour y almacena la información de cada recorrido turístico.
+
+### GestorDatos.java
+
+Se encarga de leer el archivo de datos, crear los objetos Tour y almacenarlos en una colección ArrayList.
+
+### TourService.java
+
+Contiene métodos para mostrar y buscar tours dentro de la colección.
+
+### Main.java
+
+Clase principal encargada de ejecutar el programa y probar sus funcionalidades.
+
+## Instrucciones de ejecución
+
+1. Abrir el proyecto en IntelliJ IDEA.
+2. Esperar a que Maven cargue la configuración del proyecto.
+3. Verificar que el archivo `tours.txt` se encuentre dentro de `src/main/resources`.
+4. Abrir la clase `Main.java`.
+5. Ejecutar el método `main()`.
+6. Revisar los resultados en la consola.
 
 ## Autor
 
-Ignacio Arriagada, Estudiante Analista Programador Computacional, Duoc UC
+Ignacio Nicolás Arriagada Guzmán
+
+Analista Programador Computacional
+
+Duoc UC

@@ -2,17 +2,16 @@
 package data;
 
 import model.Tour;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-/** Gestiona lectura de datos */
 public class GestorDatos {
 
-    // Leer archivo
     public ArrayList<Tour> leerTours() {
 
-        ArrayList<Tour> lista = new ArrayList<>();
+        ArrayList<Tour> tours = new ArrayList<>();
 
         try {
 
@@ -25,23 +24,19 @@ public class GestorDatos {
 
             while ((linea = br.readLine()) != null) {
 
-                // Separar datos
                 String[] datos = linea.split(";");
 
                 String nombre = datos[0];
                 String comuna = datos[1];
                 int precio = Integer.parseInt(datos[2]);
 
-                // Crear objeto
-                Tour tour =
+                tours.add(
                         new Tour(
                                 nombre,
                                 comuna,
                                 precio
-                        );
-
-                // Guardar en lista
-                lista.add(tour);
+                        )
+                );
             }
 
             br.close();
@@ -52,6 +47,6 @@ public class GestorDatos {
 
         }
 
-        return lista;
+        return tours;
     }
 }
