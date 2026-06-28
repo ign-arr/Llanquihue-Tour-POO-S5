@@ -1,11 +1,11 @@
 
 package util;
 
+// Valida datos
 public class Validador {
 
-    // Validar precio
-    public static boolean precioValido(int precio) {
-        return precio > 0;
+    public static boolean duracionValida(int duracionHoras) {
+        return duracionHoras > 0;
     }
 
 }
