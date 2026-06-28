@@ -1,66 +1,97 @@
-# Llanquihue Tour
+# 🗺️ LlanquihueTourApp
 
-## Descripción del proyecto
+## 📌 Descripción
 
-Llanquihue Tour es una aplicación desarrollada en Java que permite gestionar información de servicioTuristicos turísticos de la comuna de Llanquihue. El sistema lee datos desde un archivo de texto, crea objetos de tipo Tour y los almacena en una colección ArrayList para posteriormente mostrarlos y realizar búsquedas simples.
+LlanquihueTourApp es una aplicación desarrollada en Java que representa distintos servicios turísticos ofrecidos por la agencia Llanquihue Tour.
 
-## Estructura del proyecto
+En esta etapa del proyecto se implementó una jerarquía de clases utilizando herencia y composición, permitiendo reutilizar código y modelar de mejor manera los distintos tipos de servicios turísticos.
 
-```text
-LlanquihueTourApp
-│
-├── pom.xml
-│
-└── src
-    └── main
-        ├── java
-        │   ├── model
-        │   │   └── Tour.java
-        │   │
-        │   ├── data
-        │   │   └── GestorDatos.java
-        │   │
-        │   ├── service
-        │   │   └── TourService.java
-        │   │
-        │   └── ui
-        │       └── Main.java
+---
+
+## 🎯 Objetivo de esta semana
+
+Implementar una jerarquía de clases orientada a objetos aplicando los siguientes conceptos:
+
+- Herencia.
+- Composición.
+- Encapsulamiento.
+- Constructores.
+- Getters y Setters.
+- Sobrescritura del método `toString()`.
+- Organización del proyecto mediante paquetes.
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+src
+└── main
+    └── java
+        ├── model
+        │   ├── Guia.java
+        │   ├── ServicioTuristico.java
+        │   ├── RutaGastronomica.java
+        │   ├── PaseoLacustre.java
+        │   └── ExcursionCultural.java
         │
-        └── resources
-            └── servicioTuristicos.txt
+        ├── data
+        │   └── GestorServicios.java
+        │
+        ├── service
+        │   └── ServicioService.java
+        │
+        ├── util
+        │   └── Validador.java
+        │
+        └── ui
+            └── Main.java
 ```
 
-## Descripción de las clases
+---
 
-### Tour.java
+## 📚 Clases creadas
 
-Representa la entidad Tour y almacena la información de cada recorrido turístico.
+### model
 
-### GestorDatos.java
+- **Guia:** representa al guía encargado de un servicio turístico.
+- **ServicioTuristico:** superclase que contiene la información común de todos los servicios.
+- **RutaGastronomica:** representa una ruta gastronómica.
+- **PaseoLacustre:** representa un paseo por el Lago Llanquihue.
+- **ExcursionCultural:** representa una excursión a un lugar histórico o cultural.
 
-Se encarga de leer el archivo de datos, crear los objetos Tour y almacenarlos en una colección ArrayList.
+### data
 
-### TourService.java
+- **GestorServicios:** crea las instancias de prueba y muestra la información.
 
-Contiene métodos para mostrar y buscar servicioTuristicos dentro de la colección.
+### service
 
-### Main.java
+- **ServicioService:** muestra la información de los servicios turísticos.
 
-Clase principal encargada de ejecutar el programa y probar sus funcionalidades.
+### util
 
-## Instrucciones de ejecución
+- **Validador:** realiza validaciones básicas antes de mostrar los servicios.
+
+### ui
+
+- **Main:** ejecuta la aplicación.
+
+---
+
+## ▶️ Instrucciones para ejecutar Main
 
 1. Abrir el proyecto en IntelliJ IDEA.
-2. Esperar a que Maven cargue la configuración del proyecto.
-3. Verificar que el archivo `servicioTuristicos.txt` se encuentre dentro de `src/main/resources`.
-4. Abrir la clase `Main.java`.
-5. Ejecutar el método `main()`.
-6. Revisar los resultados en la consola.
+2. Esperar que Maven sincronice el proyecto.
+3. Abrir la clase `Main.java` ubicada en el paquete `ui`.
+4. Ejecutar el método `main()`.
+5. La información de los servicios turísticos será mostrada por consola.
+
+---
 
 ## Autor
 
 Ignacio Nicolás Arriagada Guzmán
 
-Analista Programador Computacional
+Estudiante Analista Programador Computacional
 
 Duoc UC
