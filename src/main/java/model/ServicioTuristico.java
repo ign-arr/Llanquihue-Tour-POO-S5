@@ -45,4 +45,9 @@ public class ServicioTuristico {
                 " | Guía: " + guia;
     }
 
+    // Mostrar información
+    public void mostrarInformacion() {
+        System.out.println(this);
+    }
+
 }

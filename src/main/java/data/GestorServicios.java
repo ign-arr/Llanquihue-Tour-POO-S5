@@ -1,92 +1,86 @@
 
 package data;
 
-import model.ExcursionCultural;
-import model.Guia;
-import model.PaseoLacustre;
-import model.RutaGastronomica;
-import service.ServicioService;
-import util.Validador;
+import model.*;
 
-// Crea servicios
+import java.util.ArrayList;
+import java.util.List;
+
+// Gestiona los servicios
 public class GestorServicios {
 
-    public void crearServicios() {
+    private List<ServicioTuristico> servicios;
 
-        ServicioService servicio = new ServicioService();
+    public GestorServicios() {
 
-        // Guías
-        Guia guia1 = new Guia("Maria Espinoza", "939988712");
-        Guia guia2 = new Guia("Roberto Arriagada", "932147821");
+        servicios = new ArrayList<>();
 
-        // Rutas gastronómicas
-        RutaGastronomica ruta1 =
+        Guia guia1 =
+                new Guia(
+                        "Maria Espinoza",
+                        "939988712"
+                );
+
+        Guia guia2 =
+                new Guia(
+                        "Roberto Arriagada",
+                        "932147821"
+                );
+
+        servicios.add(
                 new RutaGastronomica(
                         "Ruta Cocina Local",
                         4,
                         guia1,
-                        5);
+                        5
+                )
+        );
 
-        RutaGastronomica ruta2 =
+        servicios.add(
                 new RutaGastronomica(
                         "Ruta Sabores del Lago",
                         3,
                         guia2,
-                        4);
+                        4
+                )
+        );
 
-        // Paseos lacustres
-        PaseoLacustre paseo1 =
+        servicios.add(
                 new PaseoLacustre(
                         "Paseo Lago Llanquihue",
                         2,
                         guia1,
-                        "Catamarán");
+                        "Catamarán"
+                )
+        );
 
-        PaseoLacustre paseo2 =
+        servicios.add(
                 new PaseoLacustre(
                         "Paseo Bahía de Llanquihue",
                         1,
                         guia2,
-                        "Lancha");
+                        "Lancha"
+                )
+        );
 
-        // Excursiones culturales
-        ExcursionCultural excursion1 =
+        servicios.add(
                 new ExcursionCultural(
                         "Historia de Llanquihue",
                         5,
                         guia1,
-                        "Parroquia San José");
-
-        ExcursionCultural excursion2 =
-                new ExcursionCultural(
-                        "Patrimonio Local",
-                        4,
-                        guia2,
-                        "Museo Del Lago Llanquihue");
-
-        // Mostrar servicios
-        if (Validador.duracionValida(ruta1.getDuracionHoras()))
-            servicio.mostrarServicio(ruta1);
-
-        if (Validador.duracionValida(ruta2.getDuracionHoras()))
-            servicio.mostrarServicio(ruta2);
-
-        System.out.println();
-
-        if (Validador.duracionValida(paseo1.getDuracionHoras()))
-            servicio.mostrarServicio(paseo1);
-
-        if (Validador.duracionValida(paseo2.getDuracionHoras()))
-            servicio.mostrarServicio(paseo2);
-
-        System.out.println();
-
-        if (Validador.duracionValida(excursion1.getDuracionHoras()))
-            servicio.mostrarServicio(excursion1);
-
-        if (Validador.duracionValida(excursion2.getDuracionHoras()))
-            servicio.mostrarServicio(excursion2);
+                        "Museo Del Lago Llanquihue"
+                )
+        );
 
     }
 
-}
+    // Mostrar servicios
+    public void mostrarServicios() {
+
+        for (ServicioTuristico servicio : servicios) {
+
+            servicio.mostrarInformacion();
+
+        }
+
+    }

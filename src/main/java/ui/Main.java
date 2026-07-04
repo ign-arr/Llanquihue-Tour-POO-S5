@@ -10,7 +10,7 @@ public class Main {
 
         GestorServicios gestor = new GestorServicios();
 
-        gestor.crearServicios();
+        gestor.mostrarServicios();
 
     }
 
