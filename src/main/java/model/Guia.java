@@ -2,7 +2,7 @@
 package model;
 
 // Representa un guía turístico
-public class Guia {
+public class Guia implements Registrable {
 
     private String nombre;
     private String telefono;
@@ -31,6 +31,12 @@ public class Guia {
     @Override
     public String toString() {
         return nombre + " - " + telefono;
+    }
+
+    // Mostrar resumen
+    @Override
+    public void mostrarResumen() {
+        System.out.println("Guía: " + nombre + " | Teléfono: " + telefono);
     }
 
 }
