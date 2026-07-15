@@ -1,16 +1,12 @@
 
 package model;
 
-// Hereda de ServicioTuristico
+// Excursión cultural
 public class ExcursionCultural extends ServicioTuristico {
 
     private String lugarHistorico;
 
-    public ExcursionCultural(String nombre,
-                             int duracionHoras,
-                             Guia guia,
-                             String lugarHistorico) {
-
+    public ExcursionCultural(String nombre, int duracionHoras, Guia guia, String lugarHistorico) {
         super(nombre, duracionHoras, guia);
         this.lugarHistorico = lugarHistorico;
     }
@@ -24,15 +20,14 @@ public class ExcursionCultural extends ServicioTuristico {
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                " | Lugar histórico: " + lugarHistorico;
+    public void mostrarInformacion() {
+        System.out.println(toString());
     }
 
-    // Mostrar información
     @Override
-    public void mostrarInformacion() {
-        System.out.println("Excursión Cultural -> " + this);
+    public String toString() {
+        return super.toString() +
+                " | Lugar: " + lugarHistorico;
     }
 
 }

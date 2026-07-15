@@ -1,68 +1,65 @@
 
 package ui;
 
+import data.GestorClientes;
 import data.GestorEntidades;
-import model.Guia;
-import model.Vehiculo;
+import data.GestorServicios;
+import model.*;
 
-import javax.swing.JOptionPane;
-
-// Clase principal
 public class Main {
 
     public static void main(String[] args) {
 
-        GestorEntidades gestor = new GestorEntidades();
+        try {
 
-        int opcion;
+            // Clientes
+            GestorClientes gestorClientes = new GestorClientes();
 
-        do {
+            gestorClientes.cargarClientes("src/main/resources/clientes.txt");
 
-            opcion = Integer.parseInt(JOptionPane.showInputDialog(
-                    "1. Agregar guía\n" +
-                            "2. Agregar vehículo\n" +
-                            "3. Mostrar entidades\n" +
-                            "4. Salir"
-            ));
+            System.out.println("===== CLIENTES =====");
 
-            switch (opcion) {
+            gestorClientes.mostrarClientes();
 
-                case 1:
+            System.out.println();
 
-                    String nombre = JOptionPane.showInputDialog("Nombre del guía");
-                    String telefono = JOptionPane.showInputDialog("Teléfono");
+            // Guía
+            Guia guia = new Guia(
+                    "Pedro González",
+                    new Rut("11.783.861-0"),
+                    new Direccion("Vazquez 120", "Llanquihue"),
+                    "986871203"
+            );
 
-                    gestor.agregarGuia(
-                            new Guia(nombre, telefono)
-                    );
+            // Vehículo
+            Vehiculo vehiculo = new Vehiculo(
+                    "DZ-BH-19",
+                    "Minibús"
+            );
 
-                    break;
+            // Entidades
+            GestorEntidades gestorEntidades = new GestorEntidades();
 
-                case 2:
+            gestorEntidades.cargarEntidades(guia, vehiculo);
 
-                    String patente = JOptionPane.showInputDialog("Patente");
-                    String tipo = JOptionPane.showInputDialog("Tipo de vehículo");
+            System.out.println("===== ENTIDADES =====");
 
-                    gestor.agregarVehiculo(
-                            new Vehiculo(patente, tipo)
-                    );
+            gestorEntidades.mostrarEntidades();
 
-                    break;
+            // Servicios
+            GestorServicios gestorServicios = new GestorServicios();
 
-                case 3:
+            gestorServicios.cargarServicios(guia);
 
-                    gestor.mostrarEntidades();
+            System.out.println("===== SERVICIOS =====");
 
-                    JOptionPane.showMessageDialog(
-                            null,
-                            "Los datos fueron mostrados en la consola."
-                    );
+            gestorServicios.mostrarServicios();
 
-                    break;
+        } catch (Exception e) {
 
-            }
+            System.out.println(e.getMessage());
 
-        } while (opcion != 4);
+        }
 
     }
 

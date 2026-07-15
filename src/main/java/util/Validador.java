@@ -1,11 +1,13 @@
 
 package util;
 
-// Valida datos
+// Validaciones básicas
 public class Validador {
 
-    public static boolean duracionValida(int duracionHoras) {
-        return duracionHoras > 0;
+    public static boolean validarTexto(String texto) {
+
+        return texto != null && !texto.isBlank();
+
     }
 
 }

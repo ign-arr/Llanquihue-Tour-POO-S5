@@ -2,56 +2,62 @@
 
 ## 📌 Descripción
 
-Aplicación desarrollada en Java para gestionar entidades y servicios turísticos de la agencia Llanquihue Tour. En esta etapa se incorporan interfaces, polimorfismo, colecciones genéricas y una interfaz gráfica básica.
+Aplicación desarrollada en Java para gestionar entidades y servicios turísticos de la agencia Llanquihue Tour utilizando Programación Orientada a Objetos.
 
 ---
 
-## 🎯 Objetivo
-
-- Aplicar interfaces.
-- Utilizar polimorfismo.
-- Gestionar objetos con `ArrayList`.
-- Usar `instanceof`.
-- Implementar una interfaz gráfica con `JOptionPane`.
-
----
-
-## 📁 Estructura del proyecto
+## 📁 Estructura
 
 ```
 src
 ├── model
-│   ├── Registrable
-│   ├── Guia
-│   ├── Vehiculo
-│   ├── ServicioTuristico
-│   ├── RutaGastronomica
-│   ├── PaseoLacustre
-│   └── ExcursionCultural
-│
 ├── data
-│   ├── GestorServicios
-│   └── GestorEntidades
-│
 ├── util
-│   └── Validador
-│
-└── ui
-    └── Main
+├── ui
+└── resources
 ```
+
+---
+
+## 📚 Clases
+
+### model
+- Persona
+- Cliente
+- Guia
+- Vehiculo
+- Direccion
+- Rut
+- Registrable
+- ServicioTuristico
+- RutaGastronomica
+- PaseoLacustre
+- ExcursionCultural
+
+### data
+- GestorClientes
+- GestorEntidades
+- GestorServicios
+
+### util
+- LectorArchivo
+- Validador
+- RutInvalidoException
+
+### ui
+- Main
 
 ---
 
 ## ▶️ Ejecución
 
 1. Abrir el proyecto en IntelliJ IDEA.
-2. Esperar que Maven sincronice el proyecto.
-3. Ejecutar la clase `Main`.
-4. Utilizar el menú para agregar y mostrar entidades.
+2. Ejecutar la clase `Main`.
+3. Visualizar los resultados por consola.
 
 ---
 
-## Autor
+## 👨‍💻 Autor
 
 Ignacio Nicolás Arriagada Guzmán
 

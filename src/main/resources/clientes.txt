@@ -1,0 +1,4 @@
+María Soto;18.234.567-8;Baquedano 120;Llanquihue;987654321
+Juan Pérez;17.345.678-9;San Martín 45;Llanquihue;912345678
+Camila Rojas;19.876.543-2;Los Copihues 310;Llanquihue;976543210
+Diego Muñoz;16.543.210-1;Errázuriz 98;Llanquihue;998877665

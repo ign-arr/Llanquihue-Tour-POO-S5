@@ -1,38 +1,33 @@
 
 package model;
 
-// Hereda de ServicioTuristico
+// Ruta gastronómica
 public class RutaGastronomica extends ServicioTuristico {
 
-    private int numeroDeParadas;
+    private int numeroParadas;
 
-    public RutaGastronomica(String nombre,
-                            int duracionHoras,
-                            Guia guia,
-                            int numeroDeParadas) {
-
+    public RutaGastronomica(String nombre, int duracionHoras, Guia guia, int numeroParadas) {
         super(nombre, duracionHoras, guia);
-        this.numeroDeParadas = numeroDeParadas;
+        this.numeroParadas = numeroParadas;
     }
 
-    public int getNumeroDeParadas() {
-        return numeroDeParadas;
+    public int getNumeroParadas() {
+        return numeroParadas;
     }
 
-    public void setNumeroDeParadas(int numeroDeParadas) {
-        this.numeroDeParadas = numeroDeParadas;
+    public void setNumeroParadas(int numeroParadas) {
+        this.numeroParadas = numeroParadas;
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        System.out.println(toString());
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                " | Paradas: " + numeroDeParadas;
-    }
-
-    // Mostrar información
-    @Override
-    public void mostrarInformacion() {
-        System.out.println("Ruta Gastronómica -> " + this);
+                " | Paradas: " + numeroParadas;
     }
 
 }

@@ -1,9 +1,7 @@
 
 package data;
 
-import model.Guia;
-import model.Registrable;
-import model.Vehiculo;
+import model.*;
 
 import java.util.ArrayList;
 
@@ -18,17 +16,14 @@ public class GestorEntidades {
 
     }
 
-    // Agregar guía
-    public void agregarGuia(Guia guia) {
+    // Carga entidades
+    public void cargarEntidades(Guia guia, Vehiculo vehiculo) {
+
         entidades.add(guia);
-    }
-
-    // Agregar vehículo
-    public void agregarVehiculo(Vehiculo vehiculo) {
         entidades.add(vehiculo);
+
     }
 
-    // Mostrar entidades
     public void mostrarEntidades() {
 
         for (Registrable entidad : entidades) {

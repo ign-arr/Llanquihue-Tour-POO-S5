@@ -16,12 +16,12 @@ public class Vehiculo implements Registrable {
         return patente;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
     public void setPatente(String patente) {
         this.patente = patente;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 
     public void setTipo(String tipo) {
@@ -29,14 +29,13 @@ public class Vehiculo implements Registrable {
     }
 
     @Override
-    public String toString() {
-        return tipo + " - " + patente;
+    public void mostrarResumen() {
+        System.out.println("Vehículo: " + tipo + " | " + patente);
     }
 
-    // Mostrar resumen
     @Override
-    public void mostrarResumen() {
-        System.out.println("Vehículo: " + tipo + " | Patente: " + patente);
+    public String toString() {
+        return tipo + " - " + patente;
     }
 
 }

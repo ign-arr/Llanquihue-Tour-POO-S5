@@ -1,7 +1,7 @@
 
 package model;
 
-// Superclase
+// Clase base
 public class ServicioTuristico {
 
     private String nombre;
@@ -38,16 +38,15 @@ public class ServicioTuristico {
         this.guia = guia;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre +
-                " | Duración: " + duracionHoras + " horas" +
-                " | Guía: " + guia;
+    public void mostrarInformacion() {
+        System.out.println(toString());
     }
 
-    // Mostrar información
-    public void mostrarInformacion() {
-        System.out.println(this);
+    @Override
+    public String toString() {
+        return "Servicio: " + nombre +
+                " | Duración: " + duracionHoras +
+                " horas | Guía: " + guia.getNombre();
     }
 
 }

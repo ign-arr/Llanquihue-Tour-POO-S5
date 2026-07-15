@@ -1,12 +1,12 @@
 
 package model;
 
-// Representa un guía
-public class Guia extends Persona implements Registrable {
+// Representa un cliente
+public class Cliente extends Persona implements Registrable {
 
     private String telefono;
 
-    public Guia(String nombre, Rut rut, Direccion direccion, String telefono) {
+    public Cliente(String nombre, Rut rut, Direccion direccion, String telefono) {
         super(nombre, rut, direccion);
         this.telefono = telefono;
     }
@@ -21,7 +21,7 @@ public class Guia extends Persona implements Registrable {
 
     @Override
     public void mostrarResumen() {
-        System.out.println("Guía: " + getNombre() + " | Teléfono: " + telefono);
+        System.out.println("Cliente: " + getNombre() + " | Teléfono: " + telefono);
     }
 
     @Override
