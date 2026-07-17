@@ -1,7 +1,9 @@
 
 package data;
 
-import model.*;
+import model.Guia;
+import model.Registrable;
+import model.Vehiculo;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class GestorEntidades {
 
     }
 
-    // Carga entidades
+    // Agrega entidades
     public void cargarEntidades(Guia guia, Vehiculo vehiculo) {
 
         entidades.add(guia);
@@ -24,23 +26,32 @@ public class GestorEntidades {
 
     }
 
-    public void mostrarEntidades() {
+    // Devuelve las entidades
+    public String mostrarEntidades() {
+
+        StringBuilder texto = new StringBuilder();
 
         for (Registrable entidad : entidades) {
 
-            entidad.mostrarResumen();
+            texto.append(entidad.toString());
 
             if (entidad instanceof Guia) {
-                System.out.println("Tipo: Guía");
+
+                texto.append(" (Guía)");
+
             }
 
             if (entidad instanceof Vehiculo) {
-                System.out.println("Tipo: Vehículo");
+
+                texto.append(" (Vehículo)");
+
             }
 
-            System.out.println();
+            texto.append("\n");
 
         }
+
+        return texto.toString();
 
     }
 

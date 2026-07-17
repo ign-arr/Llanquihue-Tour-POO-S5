@@ -19,28 +19,29 @@ public class GestorClientes {
 
     }
 
+    // Lee clientes desde un archivo
     public void cargarClientes(String ruta) {
 
-        ArrayList<String> datos = LectorArchivo.leerArchivo(ruta);
+        ArrayList<String> lineas = LectorArchivo.leerArchivo(ruta);
 
-        for (String linea : datos) {
+        for (String linea : lineas) {
 
             try {
 
-                String[] partes = linea.split(";");
+                String[] datos = linea.split(";");
 
                 Cliente cliente = new Cliente(
-                        partes[0],
-                        new Rut(partes[1]),
-                        new Direccion(partes[2], partes[3]),
-                        partes[4]
+                        datos[0],
+                        new Rut(datos[1]),
+                        new Direccion(datos[2], datos[3]),
+                        datos[4]
                 );
 
                 clientes.add(cliente);
 
             } catch (Exception e) {
 
-                System.out.println("Error al cargar cliente.");
+                System.out.println("Error al cargar un cliente.");
 
             }
 
@@ -48,13 +49,18 @@ public class GestorClientes {
 
     }
 
-    public void mostrarClientes() {
+    // Devuelve los clientes
+    public String mostrarClientes() {
+
+        StringBuilder texto = new StringBuilder();
 
         for (Cliente cliente : clientes) {
 
-            System.out.println(cliente);
+            texto.append(cliente).append("\n");
 
         }
+
+        return texto.toString();
 
     }
 

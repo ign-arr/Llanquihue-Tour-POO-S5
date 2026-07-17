@@ -1,7 +1,11 @@
 
 package data;
 
-import model.*;
+import model.ExcursionCultural;
+import model.Guia;
+import model.PaseoLacustre;
+import model.RutaGastronomica;
+import model.ServicioTuristico;
 
 import java.util.ArrayList;
 
@@ -16,7 +20,7 @@ public class GestorServicios {
 
     }
 
-    // Crea servicios de prueba
+    // Agrega servicios
     public void cargarServicios(Guia guia) {
 
         servicios.add(new RutaGastronomica(
@@ -42,13 +46,19 @@ public class GestorServicios {
 
     }
 
-    public void mostrarServicios() {
+    // Devuelve los servicios
+    public String mostrarServicios() {
+
+        StringBuilder texto = new StringBuilder();
 
         for (ServicioTuristico servicio : servicios) {
 
-            servicio.mostrarInformacion();
+            texto.append(servicio.toString());
+            texto.append("\n");
 
         }
+
+        return texto.toString();
 
     }
 
